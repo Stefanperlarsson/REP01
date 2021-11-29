@@ -7,6 +7,7 @@
 /* Notes
 Focus on documentation, .md file convert to pdf
 Read teacher docs more
+* https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf (mdpdf usage)
 
 Code
 * maybe make int_input() into input() and just call fgets manually for each string input?
