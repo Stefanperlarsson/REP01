@@ -1,8 +1,19 @@
-# Foobar
+# REP01
 
-Foobar is a Python library for dealing with word pluralization.
+所属：京都コンピュータ学院情報処理科
+
+作成者：ラーション・ステファン、学生番号：E20C4033
+
+## 概要 (Verify this later)
+
+* [ 外部仕様 ](#specifications)
+* [ 内部設計・プログラムの詳細 ](#design)
+* [ 流れ ](#flow)
+* [ 特徴的 ](#notes)
+* [ その他 ](#other)
 
 ## Installation
+<a name="specifications"></a>
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
 
@@ -11,6 +22,7 @@ pip install foobar
 ```
 
 ## Usage
+<a name="usage"></a>
 
 ```python
 import foobar
@@ -25,10 +37,17 @@ foobar.pluralize('goose')
 foobar.singularize('phenomena')
 ```
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+## 外部仕様
+<a name="specifications"></a>
 
-Please make sure to update tests as appropriate.
+## 内部設計・プログラムの詳細
+<a name="design"></a>
 
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+## 流れ
+<a name="flow"></a>
+
+## 特徴的
+<a name="notes"></a>
+
+## その他
+<a name="other"></a>
