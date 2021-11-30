@@ -83,12 +83,41 @@ void destroy(List *pHead) {
     }
 }
 
-void edit(List *pHead) {
+void edit(List *pHead) { //TODO: technically this replaces the entire node with a new one, should it only replace the data and not create a new memory object?
 
+    List *node = find(pHead);
+    List *p = NULL;
+
+    if(node) {
+        p = new();
+        if(node->next) {
+            node->next->previous = p;
+            p->next = node->next;
+        }
+        node->previous->next = p;
+        p->previous = node->previous;
+        free(node);     
+    }
+}
+
+void move(List *pHead) {
+    
     List *node = find(pHead);
 
     if(node) {
-        *node = *new();
+        if(node->next) {
+            node->next->previous = node->previous;
+            node->previous->next = node->next;
+        } else if(node->previous->previous) { //make sure we're not in pHead
+            node->previous->next = NULL;
+        } else {
+            fprintf(stderr, "Only one item in list!"); //TODO: at this point we can still move the first item in the list if we have more than 2 items total
+            //maybe disable the ability to move the first item alltogether? would reduce this if statement a lot.
+        }
+        node->next = pHead->next;
+        node->previous = pHead;
+        pHead->next->previous = node;
+        pHead->next = node;
     }
 }
 

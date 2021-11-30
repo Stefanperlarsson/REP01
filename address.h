@@ -30,6 +30,7 @@ void printAll(List *pHead);
 void print(List *pHead);
 void add(List *pHead);
 void edit(List *pHead);
+void move(List *pHead);
 void destroyAll(List *pHead);
 void destroy(List *pHead);
 char* string_input(char *c, int s);

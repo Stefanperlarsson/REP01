@@ -51,7 +51,7 @@ int main(void) {
                 edit(pHead);
                 break;
             case 6:
-    
+                move(pHead);
                 break;
             case 0:
                 destroyAll(pHead);
