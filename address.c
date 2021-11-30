@@ -19,9 +19,12 @@ void printAll(List *pHead){
     if(!node) //Empty head
         return ;
 
+    printf("HEAD current: %p, previous: %p, next: %p, \n", pHead, pHead->previous, pHead->next);
     while(node->next != NULL){
         node = node->next;
-    	printf("%s\n", node->email);
+    	//printf("%s\n", node->email);
+        printf("email: %s, current: %p, previous: %p, next: %p, \n", node->email, node, node->previous, node->next);
+        
     }
 }
 
@@ -71,13 +74,11 @@ void destroy(List *pHead) {
 
     List *node = find(pHead);
 
-    //printf("%p:%s\n", node, node->email);
-    //doesnt work if you first remove a middle one, then the last one
-
-    //doesnt work, potentially same issue as when trying to replace the pHead pointer
     if(node) {
-        *node->previous->next = *node->next;
-        //printf("%p(%s) set to %p(%s)\n", node->previous, node->previous->email, node->next, node->next->email);
+        if(node->next) {
+            node->next->previous = node->previous;
+        }
+        node->previous->next = node->next;
         free(node);
     }
 }
@@ -117,6 +118,7 @@ List *find(List *pHead) {
 List* new(){
 
     List *node = (List *) malloc(1 * sizeof(List));
+    node->next = NULL;
     
     /*
     printf("名前：");
