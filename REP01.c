@@ -22,6 +22,7 @@ address.c - data object, address functions
 #include <stdio.h>
 
 #include "address.h"
+#include "io.h"
 
 int int_input();
 void clear();
@@ -29,7 +30,10 @@ void clear();
 int main(void) {
 
     List *pHead = (List *) malloc(1 * sizeof(List));
-    
+
+    //Load addresses
+    printf("Read %d addresses\n", read(pHead));
+
     printf("Ｃ言語実習２　アドレス帳　E20C4033　ラーション・ステファン\n");
     while(1) {
         printf("\n1)一覧 2)詳細 3)新規登録 4)削除 5)挿入 6)移動 0)終了\n");
@@ -54,6 +58,7 @@ int main(void) {
                 move(pHead);
                 break;
             case 0:
+                write(pHead);
                 destroyAll(pHead);
                 return 0;
                 break;
