@@ -13,6 +13,7 @@ Code
 * maybe make int_input() into input() and just call fgets manually for each string input?
 
 https://stackoverflow.com/questions/5128664/how-to-split-a-c-program-into-multiple-files
+https://stackoverflow.com/questions/1085083/regular-expressions-in-c-examples
 validation.c - validate address input
 io.c - storage
 REP01.c - main, menu

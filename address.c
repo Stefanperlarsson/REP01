@@ -12,6 +12,7 @@
 //TODO: make variable names standard, pHead, node, p etc etc
 
 #include "address.h"
+#include "validation.h"
 
 void printAll(List *pHead){
     List *node = pHead;
@@ -154,26 +155,24 @@ List* new(){
     /*
     printf("名前：");
     string_input(node->name, REP01_NAME_MAX);
-    node->name[strcspn(node->name, "\n")] = 0;
-
+    
     printf("住所：");
     string_input(node->address, REP01_ADDRESS_MAX);
-    node->address[strcspn(node->address, "\n")] = 0;
-
+    
     printf("電話番号：");
     string_input(node->phone, REP01_PHONE_MAX);
-    node->phone[strcspn(node->phone, "\n")] = 0;
     */
 
-    printf("eメールアドレス：");
-    string_input(node->email, REP01_EMAIL_MAX);
-    node->email[strcspn(node->email, "\n")] = 0;
-    //TODO: validation
-
+    do {
+        printf("eメールアドレス：");
+        string_input(node->email, REP01_EMAIL_MAX);
+    } while(!is_email(node->email));
+    
     return node;
 }
 
 char* string_input(char *c, int s){
     fgets(c, s, stdin);
+    c[strcspn(c, "\n")] = 0;
     return c;
 }
