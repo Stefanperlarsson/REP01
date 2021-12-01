@@ -153,14 +153,20 @@ List* new(){
     node->next = NULL;
     
     /*
-    printf("名前：");
-    string_input(node->name, REP01_NAME_MAX);
-    
-    printf("住所：");
-    string_input(node->address, REP01_ADDRESS_MAX);
-    
-    printf("電話番号：");
-    string_input(node->phone, REP01_PHONE_MAX);
+    do {
+        printf("名前：");
+        string_input(node->name, REP01_NAME_MAX);
+    } while(is_empty(node->name));
+
+    do {
+        printf("住所：");
+        string_input(node->address, REP01_ADDRESS_MAX);
+    } while(is_empty(node->address));
+
+    do {
+        printf("電話番号：");
+        string_input(node->phone, REP01_PHONE_MAX);
+    } while(is_empty(node->phone));
     */
 
     do {

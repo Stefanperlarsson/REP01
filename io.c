@@ -13,6 +13,7 @@
 #include "address.h"
 #include "io.h"
 
+//TODO: issue happening when writing to file after having added a new item. garbled xml. Only garbled when not all fields and being inputted, solved by validation?
 void write(List *pHead) {
 
     xmlDocPtr doc = NULL;
@@ -28,7 +29,7 @@ void write(List *pHead) {
 
         child = xmlNewChild(root, NULL, BAD_CAST "address", NULL);
         xmlNewProp(child, BAD_CAST "name", BAD_CAST node->name);
-        xmlNewProp(child, BAD_CAST "address", BAD_CAST node->address);
+        xmlNewProp(child, BAD_CAST "address2", BAD_CAST node->address);
         xmlNewProp(child, BAD_CAST "phone", BAD_CAST node->phone);
         xmlNewProp(child, BAD_CAST "email", BAD_CAST node->email);
     }
@@ -87,7 +88,7 @@ int read(List *pHead) {
 
             while(attribute) {
                 value = xmlNodeListGetString(node->doc, attribute->children, 1);
-
+                
                 if(!strcmp(attribute->name, "name")) {
                     strcpy(p->name, (char *) value);
                 } else if(!strcmp(attribute->name, "address")) {

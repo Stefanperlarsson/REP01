@@ -9,6 +9,7 @@
 
 #include <regex.h>
 #include <stdio.h>
+#include <string.h>
 
 #include "validation.h"
 
@@ -38,4 +39,13 @@ int is_email(char *s){
 
     regfree(&regex);
     return i;
+}
+
+int is_empty(char *s){
+    if(!strlen(s)){
+        fprintf(stderr, "Please enter a valid string\n");
+        return 1;
+    } else {
+        return 0;
+    }
 }

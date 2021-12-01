@@ -8,5 +8,6 @@
 #define VALIDATION_H_INCLUDED
 
 int is_email(char *s);
+int is_empty(char *s);
 
 #endif
