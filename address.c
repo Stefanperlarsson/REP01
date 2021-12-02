@@ -45,13 +45,6 @@ void add(List *pHead){
     List *node = (List *) malloc(1 * sizeof(List));
     node->next = NULL;
     
-    //TODO assign directly to head
-    //issue is probably cause node is a local variable, needs to be supplied from main? or use return
-    //if(!pHead->next) {
-    //    *pHead = *node;
-    //} else {
-        //pHead->next = node;
-    //}
     while(p->next != NULL){
 		p = p->next;
 	}
