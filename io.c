@@ -29,7 +29,7 @@ void write(List *pHead) {
 
         child = xmlNewChild(root, NULL, BAD_CAST "address", NULL);
         xmlNewProp(child, BAD_CAST "name", BAD_CAST node->name);
-        xmlNewProp(child, BAD_CAST "address2", BAD_CAST node->address);
+        xmlNewProp(child, BAD_CAST "address", BAD_CAST node->address);
         xmlNewProp(child, BAD_CAST "phone", BAD_CAST node->phone);
         xmlNewProp(child, BAD_CAST "email", BAD_CAST node->email);
     }
