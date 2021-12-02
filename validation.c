@@ -29,7 +29,7 @@ int is_email(char *s){
     /* Compile regular expression */
     r = regcomp(&regex, REP01_EMAIL_REGEXP, REG_ICASE | REG_EXTENDED);
     if (r) {
-        fprintf(stderr, "Failed to buiild regexp\n");
+        fprintf(stderr, "regexp登録できない！\n");
         return 0;
     }
 
@@ -38,10 +38,10 @@ int is_email(char *s){
         i = 1;
     }
     else if (r == REG_NOMATCH) {
-        fprintf(stderr, "Please enter a valid email\n");
+        fprintf(stderr, "eメール書き直してください。例：xxx@xxx.com\n");
     } else {
         regerror(r, &regex, msgbuf, sizeof(msgbuf));
-        fprintf(stderr, "Regex match failed: %s\n", msgbuf);
+        fprintf(stderr, "regexエラー: %s\n", msgbuf);
     }
 
     regfree(&regex);
@@ -57,7 +57,7 @@ int is_email(char *s){
  */
 int is_empty(char *s){
     if(!strlen(s)){
-        fprintf(stderr, "Please enter a valid string\n");
+        fprintf(stderr, "空文字を入力だめ\n");
         return 1;
     } else {
         return 0;

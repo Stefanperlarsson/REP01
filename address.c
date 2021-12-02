@@ -165,7 +165,7 @@ void move(List *pHead) {
         } else if(node->previous->previous) { //make sure we're not in pHead
             node->previous->next = NULL;
         } else {
-            fprintf(stderr, "Only one item in list!"); //TODO: at this point we can still move the first item in the list if we have more than 2 items total
+            fprintf(stderr, "一つのアドレスしか入ってない！\n"); //TODO: at this point we can still move the first item in the list if we have more than 2 items total
             //maybe disable the ability to move the first item alltogether? would reduce this if statement a lot.
         }
         node->next = pHead->next;
@@ -189,7 +189,7 @@ List *find(List *pHead) {
     char c[REP01_EMAIL_MAX];
     
     if(!node->next){
-        printf("Insert data before searching\n");
+        printf("検索する前に、アドレスを追加してください\n");
         return NULL;
     }
 
@@ -203,7 +203,7 @@ List *find(List *pHead) {
             return node;
         }
     }
-    fprintf(stderr, "%s: Not found", c);
+    fprintf(stderr, "%s: 存在してない\n", c);
     return NULL;
 }
 

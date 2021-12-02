@@ -4,7 +4,6 @@
     io.c
 */
 
-//in header prob
 #define REP01_FILENAME "REP01.xml"
 
 #include <string.h>
@@ -82,7 +81,7 @@ int read(List *pHead) {
 
 	buffer = (char*)calloc(numBytes, sizeof(char));
 	if(buffer == NULL) {
-        //TODO: err message
+        fprintf(stderr, "バッファ使えない！\n");
         return 0;
     }
 	fread(buffer, sizeof(char), numBytes, in);
@@ -90,7 +89,7 @@ int read(List *pHead) {
 
 	doc = xmlParseMemory(buffer, numBytes);
     if (doc == NULL){
-		fprintf(stderr, "could not read buffer\n");
+		fprintf(stderr, "バッファを読み込めない！\n");
 		return 0;
 	}
     root = xmlDocGetRootElement(doc);
@@ -113,7 +112,7 @@ int read(List *pHead) {
                 } else if(!strcmp(attribute->name, "email")) {
                     strcpy(p->email, (char *) value);
                 } else {
-                    //TODO: err msg, failed to load field
+                    fprintf(stderr, "知らいないXMLフィールド：%s(%s)\n", attribute->name, (char *) value);
                 }
                 xmlFree(value);
                 attribute = attribute->next;
