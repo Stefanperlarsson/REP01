@@ -14,6 +14,13 @@
 #include "io.h"
 
 //TODO: issue happening when writing to file after having added a new item. garbled xml. Only garbled when not all fields and being inputted, solved by validation?
+/*
+ * Function: write
+ * ----------------------------
+ *   アドレスをXMLファイルで保存
+ *
+ *   List *pHead: Listのhead
+ */
 void write(List *pHead) {
 
     xmlDocPtr doc = NULL;
@@ -42,6 +49,13 @@ void write(List *pHead) {
 }
 
 //https://ubuntuforums.org/showthread.php?p=8805492
+/*
+ * Function: read
+ * ----------------------------
+ *   アドレスをXMLファイルから読み込む
+ *
+ *   List *pHead: Listのhead
+ */
 int read(List *pHead) {
     
     xmlDocPtr doc;

@@ -13,6 +13,13 @@
 
 #include "validation.h"
 
+/*
+ * Function:  is_email 
+ * --------------------
+ *   emailをregexpで確認
+ *
+ *   returns: １＝合格、０＝不合格
+ */
 int is_email(char *s){
 
     regex_t regex;
@@ -41,6 +48,13 @@ int is_email(char *s){
     return i;
 }
 
+/*
+ * Function:  is_empty 
+ * --------------------
+ *   空のstring確認
+ *
+ *   returns: １＝合格、０＝不合格
+ */
 int is_empty(char *s){
     if(!strlen(s)){
         fprintf(stderr, "Please enter a valid string\n");

@@ -14,6 +14,14 @@
 #include "address.h"
 #include "validation.h"
 
+
+/*
+ * Function: printAll
+ * ----------------------------
+ *   全部のアドレスを出力、emailだけ
+ *
+ *   List *pHead: Listのhead
+ */
 void printAll(List *pHead){
     List *node = pHead;
     
@@ -30,6 +38,13 @@ void printAll(List *pHead){
     }
 }
 
+/*
+ * Function: print
+ * ----------------------------
+ *   一つのアドレスを細かくて出力
+ *
+ *   List *pHead: Listのhead
+ */
 void print(List *pHead) {
 
     List *node = find(pHead);
@@ -39,6 +54,13 @@ void print(List *pHead) {
     }
 }
 
+/*
+ * Function: add
+ * ----------------------------
+ *   アドレスを追加
+ *
+ *   List *pHead: Listのhead
+ */
 void add(List *pHead){
 
     List *p = pHead;
@@ -52,6 +74,13 @@ void add(List *pHead){
     node->previous = p;
 }
 
+/*
+ * Function: destroyAll
+ * ----------------------------
+ *   全部のアドレスを削除
+ *
+ *   List *pHead: Listのhead
+ */
 void destroyAll(List *pHead){
 	
     List *node;
@@ -66,6 +95,13 @@ void destroyAll(List *pHead){
 	return;
 }
 
+/*
+ * Function: destroy
+ * ----------------------------
+ *   アドレスを削除
+ *
+ *   List *pHead: Listのhead
+ */
 void destroy(List *pHead) {
 
     List *node = find(pHead);
@@ -79,7 +115,16 @@ void destroy(List *pHead) {
     }
 }
 
+/*
+ * Function: edit
+ * ----------------------------
+ *   アドレスを挿入
+ *
+ *   List *pHead: Listのhead
+ */
 void edit(List *pHead) { //TODO: technically this replaces the entire node with a new one, should it only replace the data and not create a new memory object?
+
+    //rewrite this to use the new new() function
 
     List *node = find(pHead);
     List *p = (List *) malloc(1 * sizeof(List));
@@ -96,6 +141,13 @@ void edit(List *pHead) { //TODO: technically this replaces the entire node with 
     }
 }
 
+/*
+ * Function: move
+ * ----------------------------
+ *   アドレスを移動
+ *
+ *   List *pHead: Listのhead
+ */
 void move(List *pHead) {
     
     List *node = find(pHead);
@@ -117,6 +169,15 @@ void move(List *pHead) {
     }
 }
 
+/*
+ * Function: find
+ * ----------------------------
+ *   emailでアドレスを検索
+ *
+ *   List *pHead: Listのhead
+ * 
+ *   returns: 見つけられたアドレス
+ */
 List *find(List *pHead) {
     List *node = pHead;
     char c[REP01_EMAIL_MAX];
@@ -140,6 +201,14 @@ List *find(List *pHead) {
     return NULL;
 }
 
+/*
+ * Function: new
+ * ----------------------------
+ *   アドレス入力
+ *
+ *   List *node: 入力したいList
+ * 
+ */
 void new(List *node){
     
     /*
@@ -165,6 +234,16 @@ void new(List *node){
     } while(!is_email(node->email));
 }
 
+/*
+ * Function: string_input
+ * ----------------------------
+ *   文字型入力
+ *
+ *   char *c: 確認したいstring
+ *   int s: *cの大きさ
+ * 
+ *   returns: 入力されたstring
+ */
 char* string_input(char *c, int s){
     fgets(c, s, stdin);
     c[strcspn(c, "\n")] = 0;

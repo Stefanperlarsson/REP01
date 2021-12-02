@@ -28,6 +28,11 @@ address.c - data object, address functions
 int int_input();
 void clear();
 
+/*
+ * Function:  main 
+ * --------------------
+ * メイン関数
+ */
 int main(void) {
 
     List *pHead = (List *) malloc(1 * sizeof(List));
@@ -71,6 +76,13 @@ int main(void) {
 }
 
 //TODO: move to validation.c?
+/*
+ * Function:  int_input 
+ * --------------------
+ *   数字入力確認
+ *
+ *   returns: 入力されたint形の値
+ */
 int int_input(){
     int c;
 
@@ -90,6 +102,11 @@ int int_input(){
     return c;
 }
 
+/*
+ * Function:  clear 
+ * --------------------
+ * インプットバッファを消す。
+ */
 void clear() {
     char c;
     do {
