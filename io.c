@@ -5,7 +5,7 @@
 */
 
 //in header prob
-#define FILENAME "REP01.xml"
+#define REP01_FILENAME "REP01.xml"
 
 #include <string.h>
 #include <libxml/parser.h>
@@ -43,7 +43,7 @@ void write(List *pHead) {
     }
     
     xmlSaveFormatFileEnc("-", doc, "UTF-8", 1);
-    xmlSaveFormatFileEnc(FILENAME, doc, "UTF-8", 1);
+    xmlSaveFormatFileEnc(REP01_FILENAME, doc, "UTF-8", 1);
 
     xmlFreeDoc(doc);
     xmlCleanupParser();
@@ -69,7 +69,7 @@ int read(List *pHead) {
 	long numBytes;
     int a = 0;
 
-	in = fopen(FILENAME, "r");
+	in = fopen(REP01_FILENAME, "r");
 	if(in == NULL) {
         //TODO: err message
 	    return 0;

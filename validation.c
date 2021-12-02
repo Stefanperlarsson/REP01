@@ -4,8 +4,8 @@
     validation.c
 */
 
-#define MSG_BUFFER_MAX 100
-#define EMAIL_REGEXP "^([a-zA-Z0-9_.+-])+\\@(([a-zA-Z0-9-])+\\.)+([a-zA-Z0-9]{2,4})+$"
+#define REP01_MSG_BUFFER_MAX 100
+#define REP01_EMAIL_REGEXP "^([a-zA-Z0-9_.+-])+\\@(([a-zA-Z0-9-])+\\.)+([a-zA-Z0-9]{2,4})+$"
 
 #include <regex.h>
 #include <stdio.h>
@@ -24,10 +24,10 @@ int is_email(char *s){
 
     regex_t regex;
     int r, i = 0;
-    char msgbuf[MSG_BUFFER_MAX];
+    char msgbuf[REP01_MSG_BUFFER_MAX];
 
     /* Compile regular expression */
-    r = regcomp(&regex, EMAIL_REGEXP, REG_ICASE | REG_EXTENDED);
+    r = regcomp(&regex, REP01_EMAIL_REGEXP, REG_ICASE | REG_EXTENDED);
     if (r) {
         fprintf(stderr, "Failed to buiild regexp\n");
         return 0;
