@@ -63,9 +63,12 @@ more here!
 
 ---
 ## テスト方法 <a name="testing"></a>
+### 必要なパケージ
+* libxml2-dev (debian)
+
 #### コンパイル
 ```bash
-gcc REP01.c address.c -o REP01;
+gcc `xml2-config --cflags` REP01.c address.c input.c io.c validation.c -o REP01 `xml2-config --libs`;
 ```
 
 #### 実行
