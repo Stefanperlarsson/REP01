@@ -128,22 +128,12 @@ void destroy(List *pHead) {
  *
  *   List *pHead: Listのhead
  */
-void edit(List *pHead) { //TODO: technically this replaces the entire node with a new one, should it only replace the data and not create a new memory object?
-
-    //rewrite this to use the new new() function
+void edit(List *pHead) {
 
     List *node = find(pHead);
-    List *p = (List *) malloc(1 * sizeof(List));
-    p->next = NULL;
 
     if(node) {
-        if(node->next) {
-            node->next->previous = p;
-            p->next = node->next;
-        }
-        node->previous->next = p;
-        p->previous = node->previous;
-        free(node);     
+        new(node);
     }
 }
 
