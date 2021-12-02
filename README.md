@@ -36,12 +36,29 @@ more here!
 
 ### 関数の説明 <a name="functions"></a>
 
-| ファイル名    | 関数名       | 引数        | 戻り値        | 説明                      |
-| ----------- | ----------- | ----------- | ----------- | ------------------------- |
-| REP01.c     |             |             |             |                           |
-|             | main        | （なし）     | int         | メイン                     |
-|             | int_input   | （なし）     | int         | メニュー入力                |
-|             | clear       | （なし）     | （なし）      | 要らない入力されたものを消す  |
+| ファイル名     | 関数名       | 引数              | 戻り値       | 説明                         |
+| ------------ | ------------ | ---------------- | ----------- | --------------------------- |
+| REP01.c      |              |                  |             |                             |
+|              | main         | （なし）          | int         | メイン                        |
+|              | int_input    | （なし）          | int         | メニュー入力                   |
+|              | clear        | （なし）          | （なし）     | インプットバッファを消す         |
+| address.c    |              |                  |             |                             |
+|              | printAll     | List *pHead      | （なし）     | 全部のアドレスを出力            |
+|              | print        | List *pHead      | （なし）     | アドレスを細かくて出力          |
+|              | add          | List *pHead      | （なし）     | アドレスを追加                 |
+|              | edit         | List *pHead      | （なし）     | アドレスを挿入                 |
+|              | move         | List *pHead      | （なし）     | アドレスを削除                 |
+|              | destroyAll   | List *pHead      | （なし）     | 全部のアドレスを削除            |
+|              | destroy      | List *pHead      | （なし）     | アドレスを削除                 |
+|              | string_input | char *c, int s   | char *      | 文字型入力                    |
+|              | find         | List *pHead      | List *      | emailでアドレスを検索          |
+|              | new          | List *node       | （なし）     | アドレス入力                   |
+| io.c         |              |                  |             |                             |
+|              | write        | List *pHead      | （なし）     | アドレスをXMLファイルで保存      |
+|              | read         | List *pHead      | int         | アドレスをXMLファイルから読み込む |
+| validation.c |              |                  |             |                              |
+|              | is_email     | char *           | int         | emailをregexpで確認            |
+|              | is_empty     | char *           | int         | 空のstring確認                 |
 
 ---
 ## テスト方法 <a name="testing"></a>
