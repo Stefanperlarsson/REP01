@@ -42,7 +42,8 @@ void print(List *pHead) {
 void add(List *pHead){
 
     List *p = pHead;
-    List *node = new();
+    List *node = (List *) malloc(1 * sizeof(List));
+    node->next = NULL;
     
     //TODO assign directly to head
     //issue is probably cause node is a local variable, needs to be supplied from main? or use return
@@ -88,10 +89,10 @@ void destroy(List *pHead) {
 void edit(List *pHead) { //TODO: technically this replaces the entire node with a new one, should it only replace the data and not create a new memory object?
 
     List *node = find(pHead);
-    List *p = NULL;
+    List *p = (List *) malloc(1 * sizeof(List));
+    p->next = NULL;
 
     if(node) {
-        p = new();
         if(node->next) {
             node->next->previous = p;
             p->next = node->next;
@@ -146,11 +147,7 @@ List *find(List *pHead) {
     return NULL;
 }
 
-//TODO: supply new() with a node, instead of creating it here?
-List* new(){
-
-    List *node = (List *) malloc(1 * sizeof(List));
-    node->next = NULL;
+void new(List *node){
     
     /*
     do {
@@ -173,8 +170,6 @@ List* new(){
         printf("eメールアドレス：");
         string_input(node->email, REP01_EMAIL_MAX);
     } while(!is_email(node->email));
-    
-    return node;
 }
 
 char* string_input(char *c, int s){

@@ -70,6 +70,7 @@ int main(void) {
     }
 }
 
+//TODO: move to validation.c?
 int int_input(){
     int c;
 
