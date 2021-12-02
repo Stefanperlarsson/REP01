@@ -31,15 +31,17 @@ more here!
 <img src="REP01.png" width="720">
 
 ### 特徴 <a name="notes"></a> - 必修なところ以外では、自分で頑張ってテップアップしました。
-    * ファイルで保存・読み込み
-    * 入力確認
+* ファイルで保存・読み込み
+* 入力確認
 
 ### 関数の説明 <a name="functions"></a>
-    * use a table
-    * functions, return values etc. maybe a flowchart here?
-    * rei1
-    * rei2
-    * rei3
+
+| ファイル名    | 関数名       | 引数        | 戻り値        | 説明                      |
+| ----------- | ----------- | ----------- | ----------- | ------------------------- |
+| REP01.c     |             |             |             |                           |
+|             | main        | （なし）     | int         | メイン                     |
+|             | int_input   | （なし）     | int         | メニュー入力                |
+|             | clear       | （なし）     | （なし）      | 要らない入力されたものを消す  |
 
 ---
 ## テスト方法 <a name="testing"></a>
