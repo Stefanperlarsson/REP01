@@ -7,6 +7,7 @@
 //in header prob
 #define FILENAME "REP01.xml"
 
+#include <string.h>
 #include <libxml/parser.h>
 #include <libxml/tree.h>
 

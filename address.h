@@ -9,10 +9,6 @@
 #ifndef ADDRESS_H_INCLUDED
 #define ADDRESS_H_INCLUDED
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-
 #define REP01_NAME_MAX 30
 #define REP01_ADDRESS_MAX 80
 #define REP01_PHONE_MAX 20

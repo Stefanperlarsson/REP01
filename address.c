@@ -11,6 +11,10 @@
 //TODO: error went string entered is ""
 //TODO: make variable names standard, pHead, node, p etc etc
 
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
 #include "address.h"
 #include "input.h"
 #include "validation.h"
