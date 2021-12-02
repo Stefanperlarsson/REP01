@@ -24,9 +24,7 @@ address.c - data object, address functions
 
 #include "address.h"
 #include "io.h"
-
-int int_input();
-void clear();
+#include "input.h"
 
 /*
  * Function:  main 
@@ -73,43 +71,4 @@ int main(void) {
                 break;
         }
     }
-}
-
-//TODO: move to validation.c?
-/*
- * Function:  int_input 
- * --------------------
- *   数字入力確認
- *
- *   returns: 入力されたint形の値
- */
-int int_input(){
-    int c;
-
-    while(1){
-        printf("：");
-        if(scanf("%d", &c) == 1) {            
-            break;
-        } else {
-            clear();
-            fprintf(stderr, "数字のみを入力してください\n\n");
-        }
-    }
-
-    //メニュー選択からの<ENTER>を無視
-    getchar();
-
-    return c;
-}
-
-/*
- * Function:  clear 
- * --------------------
- * インプットバッファを消す。
- */
-void clear() {
-    char c;
-    do {
-        c = getchar();
-    } while(c != '\n' && c != EOF);
 }

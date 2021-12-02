@@ -12,8 +12,8 @@
 //TODO: make variable names standard, pHead, node, p etc etc
 
 #include "address.h"
+#include "input.h"
 #include "validation.h"
-
 
 /*
  * Function: printAll
@@ -66,6 +66,8 @@ void add(List *pHead){
     List *p = pHead;
     List *node = (List *) malloc(1 * sizeof(List));
     node->next = NULL;
+    
+    new(node);
     
     while(p->next != NULL){
 		p = p->next;
@@ -232,20 +234,4 @@ void new(List *node){
         printf("eメールアドレス：");
         string_input(node->email, REP01_EMAIL_MAX);
     } while(!is_email(node->email));
-}
-
-/*
- * Function: string_input
- * ----------------------------
- *   文字型入力
- *
- *   char *c: 確認したいstring
- *   int s: *cの大きさ
- * 
- *   returns: 入力されたstring
- */
-char* string_input(char *c, int s){
-    fgets(c, s, stdin);
-    c[strcspn(c, "\n")] = 0;
-    return c;
 }

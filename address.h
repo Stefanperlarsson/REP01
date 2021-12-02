@@ -35,7 +35,6 @@ void edit(List *pHead);
 void move(List *pHead);
 void destroyAll(List *pHead);
 void destroy(List *pHead);
-char* string_input(char *c, int s);
 List *find(List *pHead);
 void new(List *node);
 

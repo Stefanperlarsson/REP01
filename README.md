@@ -40,8 +40,6 @@ more here!
 | ------------ | ------------ | ---------------- | ----------- | --------------------------- |
 | REP01.c      |              |                  |             |                             |
 |              | main         | （なし）          | int         | メイン                        |
-|              | int_input    | （なし）          | int         | メニュー入力                   |
-|              | clear        | （なし）          | （なし）     | インプットバッファを消す         |
 | address.c    |              |                  |             |                             |
 |              | printAll     | List *pHead      | （なし）     | 全部のアドレスを出力            |
 |              | print        | List *pHead      | （なし）     | アドレスを細かくて出力          |
@@ -50,9 +48,12 @@ more here!
 |              | move         | List *pHead      | （なし）     | アドレスを削除                 |
 |              | destroyAll   | List *pHead      | （なし）     | 全部のアドレスを削除            |
 |              | destroy      | List *pHead      | （なし）     | アドレスを削除                 |
-|              | string_input | char *c, int s   | char *      | 文字型入力                    |
 |              | find         | List *pHead      | List *      | emailでアドレスを検索          |
 |              | new          | List *node       | （なし）     | アドレス入力                   |
+| input.c      |              |                  |             |                              |
+|              | string_input | char *c, int s   | char *      | 文字型入力                    |
+|              | int_input    | （なし）          | int         | メニュー入力                   |
+|              | clear        | （なし）          | （なし）     | インプットバッファを消す         |
 | io.c         |              |                  |             |                             |
 |              | write        | List *pHead      | （なし）     | アドレスをXMLファイルで保存      |
 |              | read         | List *pHead      | int         | アドレスをXMLファイルから読み込む |
