@@ -9,7 +9,7 @@
 
 * [ 外部仕様 ](#specifications)
 * [ 内部設計・プログラムの詳細 ](#design)
-* [ 流れ ](#flow)
+* [ 流れ ](#flowchart)
 * [ 特徴 ](#notes)
 * [ 関数の説明 ](#functions)
 * [ テスト方法 ](#testing)
@@ -27,15 +27,15 @@ more here!
 ## 内部設計・プログラムの詳細
 <a name="design"></a>
 
-### 流れ <a name="flow"></a>
-
-flowchart of program flow here.
+### 流れ <a name="flowchart"></a>
+![flowchart](/REP01.png | width=1000)
 
 ### 特徴 <a name="notes"></a> - 必修なところ以外では、自分で頑張ってテップアップしました。
     * ファイルで保存・読み込み
     * 入力確認
 
 ### 関数の説明 <a name="functions"></a>
+    * use a table
     * functions, return values etc. maybe a flowchart here?
     * rei1
     * rei2
