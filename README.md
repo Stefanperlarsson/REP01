@@ -28,7 +28,7 @@ more here!
 <a name="design"></a>
 
 ### 流れ <a name="flowchart"></a>
-![flowchart](/REP01.png | width=1000)
+<img src="REP01.png" width="720">
 
 ### 特徴 <a name="notes"></a> - 必修なところ以外では、自分で頑張ってテップアップしました。
     * ファイルで保存・読み込み
