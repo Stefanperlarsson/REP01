@@ -4,10 +4,6 @@
     REP01.c
 */
 
-/* TODO
-* Finish README.md
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
 
