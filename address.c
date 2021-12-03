@@ -56,7 +56,6 @@ void add(List *pHead){
 
     List *p = pHead;
     List *node = (List *) malloc(1 * sizeof(List));
-    node->next = NULL;
     
     new(node);
     
@@ -111,7 +110,7 @@ void destroy(List *pHead) {
 /*
  * Function: edit
  * ----------------------------
- *   アドレスを挿入
+ *   アドレスを編集
  *
  *   List *pHead: Listのhead
  */
@@ -148,6 +147,31 @@ void move(List *pHead) {
         node->previous = pHead;
         pHead->next->previous = node;
         pHead->next = node;
+    }
+}
+
+/*
+ * Function: insert
+ * ----------------------------
+ *   アドレスを移動
+ *
+ *   List *pHead: Listのhead
+ */
+void insert(List *pHead) {
+    
+    List *node = find(pHead);
+    List *p = NULL;
+
+    if(node) {
+        p = (List *) malloc(1 * sizeof(List));
+        new(p);
+            
+        if(node->next) {
+            p->next = node->next;
+            node->next->previous = p;
+        }
+        p->previous = node;
+        node->next = p;
     }
 }
 
@@ -214,4 +238,6 @@ void new(List *node){
         printf("eメールアドレス：");
         string_input(node->email, REP01_EMAIL_MAX);
     } while(!is_email(node->email));
+
+    node->next = NULL;
 }
