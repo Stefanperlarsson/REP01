@@ -31,6 +31,7 @@ C言語でプログラミングしたアドレス帳を作っていました。
 * 削除　ー　アドレスを探して消す
 * 挿入　ー　アドレスをemailで探して挿入
 * 移動　ー　アドレスをemailで探して先頭に移動
+* 編集　ー　アドレスをemailで探して編集
 * 保存　ー　終了する時に、アドレスを全部XMLファイルで保存されて、起動する時に読み込む
 
 ---
@@ -54,8 +55,9 @@ C言語でプログラミングしたアドレス帳を作っていました。
 |              | printAll     | List *pHead      | （なし）     | 全部のアドレスを出力            |
 |              | print        | List *pHead      | （なし）     | アドレスを細かくて出力          |
 |              | add          | List *pHead      | （なし）     | アドレスを追加                 |
-|              | edit         | List *pHead      | （なし）     | アドレスを挿入                 |
+|              | insert       | List *pHead      | （なし）     | アドレスを挿入                 |
 |              | move         | List *pHead      | （なし）     | アドレスを削除                 |
+|              | edit         | List *pHead      | （なし）     | アドレスを編集                 |
 |              | destroyAll   | List *pHead      | （なし）     | 全部のアドレスを削除            |
 |              | destroy      | List *pHead      | （なし）     | アドレスを削除                 |
 |              | find         | List *pHead      | List *      | emailでアドレスを検索          |
