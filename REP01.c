@@ -4,20 +4,14 @@
     REP01.c
 */
 
-/* Notes
-Focus on documentation, .md file convert to pdf
-Read teacher docs more
-* https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf (mdpdf usage)
-
-Code
-* maybe make int_input() into input() and just call fgets manually for each string input?
-
-https://stackoverflow.com/questions/5128664/how-to-split-a-c-program-into-multiple-files
-https://stackoverflow.com/questions/1085083/regular-expressions-in-c-examples
-validation.c - validate address input
-io.c - storage
-REP01.c - main, menu
-address.c - data object, address functions
+/* TODO
+* Confirm teacher requirements
+* Add comments to code where required
+* Finish README.mc
+* Use an assets/ folder for non essentials?
+* Make variable names standard, pHead, node, p etc etc
+* Issue happening when writing to file after having added a new item. garbled xml. Only garbled when not all fields and being inputted, solved by validation?
+* Cleanup move() - At this point we can still move the first item in the list if we have more than 2 items total. Maybe disable the ability to move the first item alltogether? would reduce this if statement a lot.
 */
 
 #include <stdio.h>

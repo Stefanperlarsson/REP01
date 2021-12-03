@@ -4,13 +4,6 @@
     address.c
 */
 
-//https://stackoverflow.com/questions/6316987/should-struct-definitions-go-in-h-or-c-file
-//Private structures for that file should go in the .c file, with a declaration in the .h file if they are used by any functions in the .h .
-//Public structures should go in the .h file.
-//TODO: move to .h
-//TODO: error went string entered is ""
-//TODO: make variable names standard, pHead, node, p etc etc
-
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -30,9 +23,6 @@ void printAll(List *pHead){
     List *node = pHead;
     
     printf("一覧\n");
-    if(!node) //Empty head
-        return ;
-
     printf("HEAD current: %p, previous: %p, next: %p, \n", pHead, pHead->previous, pHead->next);
     while(node->next != NULL){
         node = node->next;
@@ -155,8 +145,7 @@ void move(List *pHead) {
         } else if(node->previous->previous) { //make sure we're not in pHead
             node->previous->next = NULL;
         } else {
-            fprintf(stderr, "一つのアドレスしか入ってない！\n"); //TODO: at this point we can still move the first item in the list if we have more than 2 items total
-            //maybe disable the ability to move the first item alltogether? would reduce this if statement a lot.
+            fprintf(stderr, "一つのアドレスしか入ってない！\n");
         }
         node->next = pHead->next;
         node->previous = pHead;

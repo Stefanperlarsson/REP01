@@ -13,7 +13,6 @@
 #include "address.h"
 #include "io.h"
 
-//TODO: issue happening when writing to file after having added a new item. garbled xml. Only garbled when not all fields and being inputted, solved by validation?
 /*
  * Function: write
  * ----------------------------
@@ -70,12 +69,11 @@ int read(List *pHead) {
 
 	in = fopen(REP01_FILENAME, "r");
 	if(in == NULL) {
-        //TODO: err message
+        fprintf(stderr, "XMLファイルを開けない！\n");
 	    return 0;
     }
 
-    //TODO: err message
-	fseek(in, 0L, SEEK_END);
+    fseek(in, 0L, SEEK_END);
 	numBytes = ftell(in);
 	fseek(in, 0L, SEEK_SET);
 

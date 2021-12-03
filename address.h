@@ -4,8 +4,6 @@
     address.h
 */
 
-//should define field names as constants so i can use them for the XML file
-
 #ifndef ADDRESS_H_INCLUDED
 #define ADDRESS_H_INCLUDED
 
