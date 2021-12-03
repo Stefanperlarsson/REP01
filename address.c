@@ -198,7 +198,6 @@ List *find(List *pHead) {
 
     printf("検索(email):");
     string_input(c, REP01_EMAIL_MAX);
-    c[strcspn(c, "\n")] = 0;
      
     while(node->next != NULL) {
         node = node->next;
