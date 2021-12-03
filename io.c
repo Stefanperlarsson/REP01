@@ -40,8 +40,6 @@ void write(List *pHead) {
         xmlNewProp(child, BAD_CAST "phone", BAD_CAST node->phone);
         xmlNewProp(child, BAD_CAST "email", BAD_CAST node->email);
     }
-    
-    xmlSaveFormatFileEnc("-", doc, "UTF-8", 1);
     xmlSaveFormatFileEnc(REP01_FILENAME, doc, "UTF-8", 1);
 
     xmlFreeDoc(doc);
