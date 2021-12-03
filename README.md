@@ -90,12 +90,15 @@ gcc `xml2-config --cflags` REP01.c address.c input.c io.c validation.c -o REP01 
 
 ---
 ## まとめ <a name="summary"></a>
+### 印象
+結構すごくいい経験だと思っていました。
 
-summary here
+「Ｃ言語実習２」を始まる前に、あまりC言語の経験がありませんでした。
 
-REMOVE IF NOT NEEDED
-* REP01.c - main()、メニュー処理
-* address.c - アドレス帳に関する関数
-* io.c - アドレス帳のデータを保存したり、読込みしたりする関数
-* build.sh - コンパイルして実行するためのスクリプト(Linux用)
-* validation.c - 入力確認ための関数
+得にアドレスのことやポインターの知識が将来でも役に立てるはずだと思っています。
+
+来年の４月、ある会社に入社予定ですが、C言語使ってないけれど、Golang使用していますので、この知識は使えます！
+
+### 改良の余地
+* 変数名はもうちょっとまとめたほうが良い
+* next/previousを繋がう時のコードはちょっと読み辛い

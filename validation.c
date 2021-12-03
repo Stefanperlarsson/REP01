@@ -42,7 +42,7 @@ int is_email(char *s){
         fprintf(stderr, "eメール書き直してください。例：xxx@xxx.com\n\n");
     } else {
         regerror(r, &regex, msgbuf, sizeof(msgbuf));
-        fprintf(stderr, "regexエラー: %s\n", msgbuf);
+        fprintf(stderr, "regexエラー： %s\n", msgbuf);
     }
 
     //regexp開放する

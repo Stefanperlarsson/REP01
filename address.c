@@ -41,7 +41,7 @@ void print(List *pHead) {
     List *node = find(pHead);
 
     if(node) {
-        printf("eメールアドレス：%s\n名前：%s\n住所：%s\n電話番号：%s\n", node->email, node->name, node->address, node->phone);
+        printf("\neメールアドレス：%s\n名前：%s\n住所：%s\n電話番号：%s\n", node->email, node->name, node->address, node->phone);
     }
 }
 
@@ -206,7 +206,7 @@ List *find(List *pHead) {
             return node;
         }
     }
-    fprintf(stderr, "%s: 存在してない\n", c);
+    fprintf(stderr, "%s：存在してない\n", c);
     return NULL;
 }
 

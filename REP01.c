@@ -5,9 +5,7 @@
 */
 
 /* TODO
-* Add comments to code where required
-* Finish README.mc
-* Make variable names standard, pHead, node, p etc etc
+* Finish README.md
 * Do a file existance check at launch for REP01.XML?
 */
 
