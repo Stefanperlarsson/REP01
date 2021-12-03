@@ -9,6 +9,7 @@
 #include <string.h>
 #include <libxml/parser.h>
 #include <libxml/tree.h>
+#include <sys/stat.h>
 
 #include "address.h"
 #include "io.h"
@@ -62,9 +63,15 @@ int read(List *pHead) {
 	xmlChar *value = NULL;
     List *p = NULL, *c = pHead;
 	FILE *in;
+    struct stat b;
 	char *buffer;
 	long numBytes;
     int a = 0;
+
+    //REP01_FILENAME存在チェック
+    if(stat(REP01_FILENAME, &b)){
+        return 0;
+    }
 
     //libxml2のxmlParseFile()を使用して、直接ファイルを読み込もうとしたが、バグがあって、fopenのバッファから読むことにした。
     //バグ：http://ubuntuforums.org/showthread.php?p=8805492

@@ -6,7 +6,6 @@
 
 /* TODO
 * Finish README.md
-* Do a file existance check at launch for REP01.XML?
 */
 
 #include <stdio.h>
