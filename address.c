@@ -22,13 +22,10 @@
 void printAll(List *pHead){
     List *node = pHead;
     
-    printf("一覧\n");
-    printf("HEAD current: %p, previous: %p, next: %p, \n", pHead, pHead->previous, pHead->next);
+    printf("\n一覧\n");
     while(node->next != NULL){
         node = node->next;
-    	//printf("%s\n", node->email);
-        printf("email: %s, current: %p, previous: %p, next: %p, \n", node->email, node, node->previous, node->next);
-        
+    	printf("* %s\n", node->email);
     }
 }
 
@@ -44,7 +41,7 @@ void print(List *pHead) {
     List *node = find(pHead);
 
     if(node) {
-        printf("eメールアドレス：%s\n名前：%s\n住所：%s\n電話番号：%s\n\n", node->email, node->name, node->address, node->phone);
+        printf("eメールアドレス：%s\n名前：%s\n住所：%s\n電話番号：%s\n", node->email, node->name, node->address, node->phone);
     }
 }
 

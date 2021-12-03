@@ -47,7 +47,7 @@ void write(List *pHead) {
     xmlCleanupParser();
 }
 
-//https://ubuntuforums.org/showthread.php?p=8805492
+//TODO: explain https://ubuntuforums.org/showthread.php?p=8805492
 /*
  * Function: read
  * ----------------------------

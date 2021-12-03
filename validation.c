@@ -38,7 +38,7 @@ int is_email(char *s){
         i = 1;
     }
     else if (r == REG_NOMATCH) {
-        fprintf(stderr, "eメール書き直してください。例：xxx@xxx.com\n");
+        fprintf(stderr, "eメール書き直してください。例：xxx@xxx.com\n\n");
     } else {
         regerror(r, &regex, msgbuf, sizeof(msgbuf));
         fprintf(stderr, "regexエラー: %s\n", msgbuf);
