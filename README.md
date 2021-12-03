@@ -88,6 +88,98 @@ gcc `xml2-config --cflags` REP01.c address.c input.c io.c validation.c -o REP01 
 ./REP01;
 ```
 
+#### 使い方（例）
+メニュー
+```bash
+Ｃ言語実習２　アドレス帳　E20C4033　ラーション・ステファン
+7のアドレスを読み込んだ
+
+1)一覧 2)詳細 3)新規登録 4)削除 5)挿入 6)移動 7)編集 0)終了
+：(これからメニュー入力)
+```
+
+新規登録と入力確認
+```bash
+1)一覧 2)詳細 3)新規登録 4)削除 5)挿入 6)移動 7)編集 0)終了
+：3
+名前：Stefan Larsson
+住所：My address 123, kyoto
+電話番号：098-1234-1234 
+eメールアドレス：test
+eメール書き直してください。例：xxx@xxx.com
+
+eメールアドレス：myemail@gmail.com
+```
+
+一覧
+```bash
+1)一覧 2)詳細 3)新規登録 4)削除 5)挿入 6)移動 7)編集 0)終了
+：1
+
+一覧
+* hello5@email.com
+* myemail@gmail.com
+```
+
+詳細
+```bash
+1)一覧 2)詳細 3)新規登録 4)削除 5)挿入 6)移動 7)編集 0)終了
+：2
+検索(email):myemail@gmail.com
+
+eメールアドレス：myemail@gmail.com
+名前：Stefan Larsson
+住所：My address 123, kyoto
+電話番号：098-1234-1234
+```
+
+削除と入力確認
+```bash
+1)一覧 2)詳細 3)新規登録 4)削除 5)挿入 6)移動 7)編集 0)終了
+：4
+検索(email):hello5
+hello5：存在してない
+
+1)一覧 2)詳細 3)新規登録 4)削除 5)挿入 6)移動 7)編集 0)終了
+：4
+検索(email):hello5@email.com
+```
+
+挿入
+```bash
+1)一覧 2)詳細 3)新規登録 4)削除 5)挿入 6)移動 7)編集 0)終了
+：5
+検索(email):myemail@gmail.com
+名前：Stefan Per Larsson
+住所：Shin-osaka, osaka
+電話番号：123-4567-0293
+eメールアドレス：mynewemailagain@gmail.com
+```
+
+移動
+```bash
+1)一覧 2)詳細 3)新規登録 4)削除 5)挿入 6)移動 7)編集 0)終了
+：6
+検索(email):mynewemailagain@gmail.com
+```
+
+編集
+```bash
+1)一覧 2)詳細 3)新規登録 4)削除 5)挿入 6)移動 7)編集 0)終了
+：7
+検索(email):myemail@gmail.com
+名前：Stefan Larsson new
+住所：New address
+電話番号：080-1236-1203  
+eメールアドレス：anotheremail@gmail.com
+```
+
+終了
+```bash
+1)一覧 2)詳細 3)新規登録 4)削除 5)挿入 6)移動 7)編集 0)終了
+：0
+```
+
 ---
 ## まとめ <a name="summary"></a>
 ### 印象
