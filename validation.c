@@ -26,13 +26,14 @@ int is_email(char *s){
     int r, i = 0;
     char msgbuf[REP01_MSG_BUFFER_MAX];
 
-    /* Compile regular expression */
+    //regexpを作成
     r = regcomp(&regex, REP01_EMAIL_REGEXP, REG_ICASE | REG_EXTENDED);
     if (r) {
         fprintf(stderr, "regexp登録できない！\n");
         return 0;
     }
 
+    //regexp合格チェック
     r = regexec(&regex, s, 0, NULL, 0);
     if (!r) {
         i = 1;
@@ -44,7 +45,9 @@ int is_email(char *s){
         fprintf(stderr, "regexエラー: %s\n", msgbuf);
     }
 
+    //regexp開放する
     regfree(&regex);
+
     return i;
 }
 

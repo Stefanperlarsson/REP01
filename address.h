@@ -7,6 +7,7 @@
 #ifndef ADDRESS_H_INCLUDED
 #define ADDRESS_H_INCLUDED
 
+//アドレス入力文字制限
 #define REP01_NAME_MAX 30
 #define REP01_ADDRESS_MAX 80
 #define REP01_PHONE_MAX 20
@@ -22,15 +23,15 @@ struct list{
 };
 typedef struct list List;
 
-void printAll(List *pHead);
-void print(List *pHead);
-void add(List *pHead);
-void edit(List *pHead);
-void move(List *pHead);
-void insert(List *pHead);
-void destroyAll(List *pHead);
-void destroy(List *pHead);
-List *find(List *pHead);
-void new(List *node);
+void printAll(List *pHead); /*全部のアドレスを出力*/
+void print(List *pHead); /*アドレスを細かくて出力*/
+void add(List *pHead); /*アドレスを追加*/
+void insert(List *pHead); /*アドレスを挿入*/
+void move(List *pHead); /*アドレスを削除*/
+void edit(List *pHead); /*アドレスを編集*/
+void destroyAll(List *pHead); /*全部のアドレスを削除*/
+void destroy(List *pHead); /*アドレスを削除*/
+List *find(List *pHead); /*emailでアドレスを検索*/
+void new(List *node); /*アドレス入力*/
 
 #endif

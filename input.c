@@ -47,7 +47,7 @@ int int_input(){
  */
 char* string_input(char *c, int s){
     fgets(c, s, stdin);
-    c[strcspn(c, "\n")] = 0;
+    c[strcspn(c, "\n")] = 0; //ニューラインを消す
     return c;
 }
 

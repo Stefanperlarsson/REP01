@@ -5,13 +5,9 @@
 */
 
 /* TODO
-* Confirm teacher requirements
 * Add comments to code where required
 * Finish README.mc
-* Use an assets/ folder for non essentials?
 * Make variable names standard, pHead, node, p etc etc
-* Issue happening when writing to file after having added a new item. garbled xml. Only garbled when not all fields and being inputted, solved by validation?
-* Maybe not needed: Cleanup move() - At this point we can still move the first item in the list if we have more than 2 items total. Maybe disable the ability to move the first item alltogether? would reduce this if statement a lot.
 * Do a file existance check at launch for REP01.XML?
 */
 

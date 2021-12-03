@@ -47,7 +47,6 @@ void write(List *pHead) {
     xmlCleanupParser();
 }
 
-//TODO: explain https://ubuntuforums.org/showthread.php?p=8805492
 /*
  * Function: read
  * ----------------------------
@@ -67,6 +66,8 @@ int read(List *pHead) {
 	long numBytes;
     int a = 0;
 
+    //libxml2のxmlParseFile()を使用して、直接ファイルを読み込もうとしたが、バグがあって、fopenのバッファから読むことにした。
+    //バグ：http://ubuntuforums.org/showthread.php?p=8805492
 	in = fopen(REP01_FILENAME, "r");
 	if(in == NULL) {
         fprintf(stderr, "XMLファイルを開けない！\n");
@@ -85,6 +86,7 @@ int read(List *pHead) {
 	fread(buffer, sizeof(char), numBytes, in);
 	fclose(in);
 
+    //バッファから読み込む
 	doc = xmlParseMemory(buffer, numBytes);
     if (doc == NULL){
 		fprintf(stderr, "バッファを読み込めない！\n");
@@ -92,6 +94,7 @@ int read(List *pHead) {
 	}
     root = xmlDocGetRootElement(doc);
 
+    //<address>を繰り返して、データを読み込む
 	for (node = root->children; node; node = node->next) {
         if(!strcmp(node->name, "address")) {
 
@@ -101,6 +104,7 @@ int read(List *pHead) {
             while(attribute) {
                 value = xmlNodeListGetString(node->doc, attribute->children, 1);
                 
+                //データをListに入れる
                 if(!strcmp(attribute->name, "name")) {
                     strcpy(p->name, (char *) value);
                 } else if(!strcmp(attribute->name, "address")) {
@@ -116,7 +120,7 @@ int read(List *pHead) {
                 attribute = attribute->next;
             }
 
-            //assign our new node to the end of newest node in pHead, then move it forward.
+            //pHeadに追加
             c->next = p;
             c->next->previous = c;
             c = c->next;
@@ -124,7 +128,7 @@ int read(List *pHead) {
         }
     }
 
-    //Free the read buffer and clean up libxml
+    //バッファやXMLを開放する
     free(buffer);
     xmlCleanupParser();
 

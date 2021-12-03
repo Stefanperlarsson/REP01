@@ -57,6 +57,7 @@ void add(List *pHead){
     List *p = pHead;
     List *node = (List *) malloc(1 * sizeof(List));
     
+    //アドレス入力
     new(node);
     
     while(p->next != NULL){
@@ -80,7 +81,6 @@ void destroyAll(List *pHead){
     while(pHead) {
 	    node = pHead;
         pHead = pHead->next;
-        printf("free: %p:%s\n", node, node->email);
         free(node);
     }
 	
@@ -134,14 +134,15 @@ void move(List *pHead) {
     
     List *node = find(pHead);
 
+    //次のはそんなにきれいではないけれど、next/previousを繋がう処理
     if(node) {
         if(node->next) {
             node->next->previous = node->previous;
             node->previous->next = node->next;
-        } else if(node->previous->previous) { //make sure we're not in pHead
+        } else if(node->previous->previous) {
             node->previous->next = NULL;
         } else {
-            fprintf(stderr, "一つのアドレスしか入ってない！\n");
+            fprintf(stderr, "一つのアドレスしか入ってないので、移動できない！\n");
         }
         node->next = pHead->next;
         node->previous = pHead;
@@ -153,7 +154,7 @@ void move(List *pHead) {
 /*
  * Function: insert
  * ----------------------------
- *   アドレスを移動
+ *   アドレスを
  *
  *   List *pHead: Listのhead
  */
@@ -163,9 +164,11 @@ void insert(List *pHead) {
     List *p = NULL;
 
     if(node) {
+        //新しいアドレス入力
         p = (List *) malloc(1 * sizeof(List));
         new(p);
-            
+
+        //next/previousを繋がう
         if(node->next) {
             p->next = node->next;
             node->next->previous = p;
@@ -193,7 +196,7 @@ List *find(List *pHead) {
         return NULL;
     }
 
-    printf(":");
+    printf("検索(email):");
     string_input(c, REP01_EMAIL_MAX);
     c[strcspn(c, "\n")] = 0;
      
@@ -217,7 +220,6 @@ List *find(List *pHead) {
  */
 void new(List *node){
     
-    /*
     do {
         printf("名前：");
         string_input(node->name, REP01_NAME_MAX);
@@ -232,7 +234,6 @@ void new(List *node){
         printf("電話番号：");
         string_input(node->phone, REP01_PHONE_MAX);
     } while(is_empty(node->phone));
-    */
 
     do {
         printf("eメールアドレス：");
